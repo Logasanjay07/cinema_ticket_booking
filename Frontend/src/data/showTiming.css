@@ -1,0 +1,153 @@
+.showtimes-page {
+  min-height: 100vh;
+  padding: 30px 50px;
+  transition: 0.4s ease;
+}
+
+.showtimes-page.light {
+  background: #f2f2f2;
+  color: #111;
+}
+
+
+.showtimes-page.dark {
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
+              url("https://images.unsplash.com/photo-1505685296765-3a2736de412f");
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.title {
+  font-size: 34px;
+  margin-bottom: 25px;
+}
+
+.theme-toggle {
+  position: absolute;
+  right: 40px;
+  top: 90px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  background: #ff4d4d;
+  color: white;
+}
+
+
+.date-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.date-card {
+  background: white;
+  width: 75px;
+  height: 85px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  transition: 0.3s ease;
+  gap: 6px;             
+  line-height: 1.2;
+}
+
+.showtimes-page.dark .date-card {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.date-card.active {
+  background: #ff4d4d;
+  color: white;
+}
+
+.theatre-card {
+  background: white;
+  padding: 20px 25px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.showtimes-page.dark .theatre-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+}
+
+.cancel {
+  color: #1db954;
+}
+
+.timings {
+  display: flex;
+  gap: 12px;
+}
+
+.time-btn {
+  padding: 10px 18px;
+  border: 2px solid #00b894;
+  background: transparent;
+  color: #00b894;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.time-btn:hover {
+  background: #00b894;
+  color: white;
+}.date-card:hover {
+  background: #ff1e1e !important;
+  color: white !important;
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(255,0,0,0.6);
+}
+
+
+.time-btn:hover {
+  background: #ff1e1e !important;
+  border-color: #ff1e1e !important;
+  color: white !important;
+  transform: scale(1.05);
+}
+
+.showtimes-page.dark {
+  background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
+    url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+@media (max-width:768px){
+
+  .showtimes-page{
+    padding:20px;
+  }
+
+  .date-row{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .theatre-card{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:15px;
+  }
+
+  .time-btn{
+    padding:8px 14px;
+    font-size:14px;
+  }
+
+}

@@ -1,0 +1,118 @@
+
+.details-container {
+  min-height: 100vh;
+  padding: 40px;
+  text-align: center;
+
+  
+  background: 
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+    url("https://images.unsplash.com/photo-1524985069026-dd778a71c7b4");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.details-img {
+  width: 260px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: 20px 0;
+  box-shadow: 0 0 25px rgba(255,0,0,0.6);
+  transition: transform 0.3s ease;
+}
+
+.details-img:hover {
+  transform: scale(1.05);
+}
+
+
+.stars span {
+  font-size: 32px;
+  cursor: pointer;
+  color: #888;
+  transition: 0.2s;
+}
+
+.stars span:hover {
+  transform: scale(1.2);
+}
+
+.stars .active {
+  color: gold;
+}
+
+
+.rate-btn {
+  margin-top: 25px;
+  padding: 12px 30px;
+  border: none;
+  background: linear-gradient(45deg, #ff0000, #ff4d4d);
+  color: white;
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255,0,0,0.7);
+  transition: 0.3s;
+}
+
+.rate-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* 🎟 Book Tickets Button */
+.book-btn {
+  margin-top: 15px;
+  padding: 12px 30px;
+  border: none;
+  background: linear-gradient(45deg, #00c853, #64dd17);
+  color: white;
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0,255,100,0.7);
+  transition: 0.3s;
+}
+
+.book-btn:hover {
+  transform: translateY(-3px);
+}
+
+
+.details-container h1 {
+  font-size: 40px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 20px rgba(255,255,255,0.4);
+}
+
+.details-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px;
+  letter-spacing: 3px;
+  color: #ffd700;
+  text-shadow: 0 0 15px rgba(255,0,0,0.7);
+}
+
+@media (max-width:768px){
+
+  .details-container{
+    padding:20px;
+  }
+
+  .details-img{
+    width:180px;
+    height:260px;
+  }
+
+  .details-container h1{
+    font-size:26px;
+  }
+
+}
