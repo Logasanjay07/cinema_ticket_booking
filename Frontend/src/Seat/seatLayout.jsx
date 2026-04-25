@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./SeatLayout.css";
+import "./seatLayout.css";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 
 const normalRows = ["A", "B", "C", "D", "E", "F"];

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./showTiming.css";
-import SeatLayout from "./Seat/SeatLayout";
+import SeatLayout from "../Seat/seatLayout";
 
 function ShowTimes() {
 
