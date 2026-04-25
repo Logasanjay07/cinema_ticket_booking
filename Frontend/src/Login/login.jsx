@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"; // ✅ added
 import "../index.css";
 import bgImage from "./Movie-theater-background-with-red-seats-vector-05.jpg";
 
-function Login(){
+function Login({ setIsLoggedIn }){
 
     const navigate = useNavigate(); // ✅ added
 
@@ -32,8 +32,9 @@ function Login(){
             if (data.status) {
                 localStorage.setItem("token", data.token);
                  localStorage.setItem("userEmail", email);
+                 setIsLoggedIn(true);
 
-                navigate("/"); // ✅ redirect only (alert removed)
+                navigate("/"); 
             } else {
                 setError(data.message);
             }
