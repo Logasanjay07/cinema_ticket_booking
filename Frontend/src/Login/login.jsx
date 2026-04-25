@@ -1,8 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; 
 import "../index.css";
 import bgImage from "./Movie-theater-background-with-red-seats-vector-05.jpg";
 
 function Login(){
+
+    const navigate = useNavigate(); 
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -28,6 +32,8 @@ function Login(){
             if (data.status) {
                 localStorage.setItem("token", data.token);
                 alert(data.message + " ✅");
+
+                navigate("/");
             } else {
                 setError(data.message);
             }
