@@ -32,7 +32,7 @@ function Login(){
             if (data.status) {
                 localStorage.setItem("token", data.token);
 
-                navigate("/"); // ✅ redirect (alert removed)
+                navigate("/"); // ✅ redirect only (alert removed)
             } else {
                 setError(data.message);
             }
@@ -59,7 +59,7 @@ function Login(){
             const data = await res.json();
 
             if (data.status) {
-                alert(data.message + " ✅");
+                alert(data.message + " ✅"); // ❗ இதை மட்டும் leave பண்ணியிருக்கேன் (registerக்கு)
                 setIsLogin(true);
                 setEmail("");
                 setPassword("");
