@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./index.css";
+import "../index.css";
 import bgImage from "./Movie-theater-background-with-red-seats-vector-05.jpg";
 
 function Login(){
