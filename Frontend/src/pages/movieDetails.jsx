@@ -14,7 +14,7 @@ function MovieDetails() {
 
   useEffect(() => {
 
-    fetch(`http://127.0.0.1:8000/api/movies/${id}/`)
+    fetch(`https://cinima-ticket-backend.onrender.com/api/movies/${id}/`)
       .then(res => res.json())
       .then(data => {
 
@@ -46,7 +46,7 @@ function MovieDetails() {
 
     try {
 
-      const res = await fetch("http://127.0.0.1:8000/api/rate-movie/", {
+      const res = await fetch("https://cinima-ticket-backend.onrender.com/api/rate-movie/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -78,7 +78,7 @@ function MovieDetails() {
       <h1>Movie: {movie.title}</h1>
 
       <img
-        src={`http://127.0.0.1:8000${movie.poster}`}
+        src={`https://cinima-ticket-backend.onrender.com${movie.poster}`}
         alt={movie.title}
         className="details-img"
       />
@@ -122,7 +122,7 @@ function MovieDetails() {
     navigate(`/book/${id}`, {
       state: {
         movieTitle: movie.title,
-        movieImage: `http://127.0.0.1:8000${movie.poster}`
+        movieImage: `https://cinima-ticket-backend.onrender.com${movie.poster}`
       }
     });
 
@@ -136,4 +136,4 @@ function MovieDetails() {
 
 }
 
-export default MovieDetails
+export default MovieDetails;

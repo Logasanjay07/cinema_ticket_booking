@@ -12,10 +12,9 @@ function ShowTimes() {
  const [selectedDate, setSelectedDate] = useState(0);
  const [theme, setTheme] = useState("light");
 
- // 🔥 FETCH SHOWS FROM DJANGO
  useEffect(() => {
 
-  fetch(`http://127.0.0.1:8000/api/shows/${id}/`)
+  fetch(`https://cinima-ticket-backend.onrender.com/api/shows/${id}/`)
   .then(res => res.json())
   .then(data => {
 
@@ -76,7 +75,6 @@ function ShowTimes() {
  <h1 className="title">Select Theatre & Timings 🎟</h1>
 
 
- {/* DATE SELECTOR */}
  <div className="date-row">
 
  {daysList.map((d,index)=>(
@@ -97,8 +95,6 @@ function ShowTimes() {
 
  </div>
 
-
- {/* SHOW LIST */}
 
  {shows.map((show)=>(
 

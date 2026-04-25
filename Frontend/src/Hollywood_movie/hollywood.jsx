@@ -10,7 +10,7 @@ function HollywoodMovies() {
 
   useEffect(() => {
 
-    fetch("http://127.0.0.1:8000/api/movies/")
+    fetch("https://cinima-ticket-backend.onrender.com/api/movies/")
       .then(res => res.json())
       .then(data => {
 
@@ -35,7 +35,7 @@ function HollywoodMovies() {
     navigate(`/movie/${movie.id}`, {
       state: {
         movieTitle: movie.title,
-        movieImage: `http://127.0.0.1:8000${movie.poster}`
+        movieImage: `https://cinima-ticket-backend.onrender.com${movie.poster}`
       }
     })
 
@@ -68,7 +68,7 @@ function HollywoodMovies() {
           >
 
             <img
-              src={`http://127.0.0.1:8000${movie.poster}`}
+              src={`https://cinima-ticket-backend.onrender.com${movie.poster}`}
               alt={movie.title}
             />
 
@@ -92,4 +92,4 @@ function HollywoodMovies() {
 
 }
 
-export default HollywoodMovies
+export default HollywoodMovies;

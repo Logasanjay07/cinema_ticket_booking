@@ -20,7 +20,7 @@ function SeatLayout() {
 
 const movieImage =
   location.state?.movieImage ||
-  `http://127.0.0.1:8000${storedMovie?.poster}`;
+  `https://cinima-ticket-backend.onrender.com${storedMovie?.poster}`;
 
 const movieTitle =
   location.state?.movieTitle ||

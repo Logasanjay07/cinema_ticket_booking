@@ -11,13 +11,12 @@ function TamilMovies() {
 
   useEffect(() => {
 
-    fetch("http://127.0.0.1:8000/api/movies/")
+    fetch("https://cinima-ticket-backend.onrender.com/api/movies/")
       .then(res => res.json())
       .then(data => {
 
         if (data.status) {
 
-          // Tamil movies filter
           const tamilMovies = data.data.filter(
             (movie) => movie.language === "Tamil"
           )
@@ -30,20 +29,18 @@ function TamilMovies() {
 
   }, [])
 
-
   const openMovie = (movie) => {
 
-  localStorage.setItem("selectedMovie", JSON.stringify(movie))
+    localStorage.setItem("selectedMovie", JSON.stringify(movie))
 
-  navigate(`/movie/${movie.id}`, {
-    state: {
-      movieTitle: movie.title,
-      movieImage: `http://127.0.0.1:8000${movie.poster}`
-    }
-  })
+    navigate(`/movie/${movie.id}`, {
+      state: {
+        movieTitle: movie.title,
+        movieImage: `https://cinima-ticket-backend.onrender.com${movie.poster}`
+      }
+    })
 
-}
-
+  }
 
   const scrollLeft = () => {
     scrollRef.current.scrollBy({ left: -300, behavior: "smooth" });
@@ -52,7 +49,6 @@ function TamilMovies() {
   const scrollRight = () => {
     scrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
   };
-
 
   return (
 
@@ -71,7 +67,7 @@ function TamilMovies() {
             onClick={() => openMovie(movie)}>
 
             <img
-              src={`http://127.0.0.1:8000${movie.poster}`}
+              src={`https://cinima-ticket-backend.onrender.com${movie.poster}`}
               alt={movie.title}
             />
 
@@ -99,4 +95,4 @@ function TamilMovies() {
 
 }
 
-export default TamilMovies
+export default TamilMovies;

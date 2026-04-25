@@ -6,23 +6,18 @@ function PaymentPage() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // 📌 Receive data from SeatLayout
   const booking = location.state;
 
-  // ❗ Always declare hooks at top (avoid hook error)
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("");
 
-  // If no booking data
   if (!booking) {
     return <h2 style={{ textAlign: "center" }}>No Booking Found</h2>;
   }
 
   const { movieTitle, movieImage, seats, total } = booking;
-  console.log("Booking Data:", booking);
 
-  // 🎟 Confirm Booking
   const confirmBooking = async () => {
 
   if (!name || !mobile || !paymentMethod) {
@@ -30,7 +25,7 @@ function PaymentPage() {
     return;
   }
 
-  const res = await fetch("http://127.0.0.1:8000/api/book-ticket/", {
+  const res = await fetch("https://cinima-ticket-backend.onrender.com/api/book-ticket/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -76,13 +71,11 @@ function PaymentPage() {
       <div className="payment-card">
         <img src={movieImage} alt={movieTitle} className="poster" />
 
-        
         <div className="details">
           <h2>{movieTitle}</h2>
           <p><b>Seats:</b> {seats.join(", ")}</p>
           <p><b>Total:</b> ₹{total}</p>
 
-          
           <input
             type="text"
             placeholder="Enter Your Name"
@@ -97,7 +90,6 @@ function PaymentPage() {
             onChange={(e) => setMobile(e.target.value)}
           />
 
-          
           <h3>Select Payment Method</h3>
           <div className="pay-options">
             <button onClick={() => setPaymentMethod("Google Pay")}>
@@ -108,7 +100,6 @@ function PaymentPage() {
             </button>
           </div>
 
-          
           <button className="pay-btn" onClick={confirmBooking}>
             Pay ₹{total}
           </button>

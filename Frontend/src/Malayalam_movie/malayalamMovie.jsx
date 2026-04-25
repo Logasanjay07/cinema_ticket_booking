@@ -10,16 +10,14 @@ function MalayalamMovies() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // 🔥 Fetch movies from backend
   useEffect(() => {
 
-    fetch("http://127.0.0.1:8000/api/movies/")
+    fetch("https://cinima-ticket-backend.onrender.com/api/movies/")
       .then((res) => res.json())
       .then((data) => {
 
         if (data.status) {
 
-          // Malayalam movies மட்டும் filter
           const malayalamMovies = data.data.filter(
             (movie) => movie.language === "Malayalam"
           );
@@ -44,7 +42,7 @@ function MalayalamMovies() {
     navigate(`/movie/${movie.id}`, {
       state: {
         movieTitle: movie.title,
-        movieImage: `http://127.0.0.1:8000${movie.poster}`
+        movieImage: `https://cinima-ticket-backend.onrender.com${movie.poster}`
       }
     });
 
@@ -82,9 +80,8 @@ function MalayalamMovies() {
             onClick={() => openMovie(movie)}
           >
 
-            {/* Poster from Django media */}
             <img
-              src={`http://127.0.0.1:8000${movie.poster}`}
+              src={`https://cinima-ticket-backend.onrender.com${movie.poster}`}
               alt={movie.title}
             />
 
