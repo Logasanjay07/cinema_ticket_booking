@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./index.css";
 import bgImage from "./Movie-theater-background-with-red-seats-vector-05.jpg";
 
-
 function Login(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -18,7 +17,7 @@ function Login(){
         }
 
         try {
-            const res = await fetch("http://127.0.0.1:8000/api/login/", {
+            const res = await fetch("https://cinima-ticket-backend.onrender.com/api/login/", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password }),
@@ -46,7 +45,7 @@ function Login(){
         }
 
         try {
-            const res = await fetch("http://127.0.0.1:8000/api/signup/", {
+            const res = await fetch("https://cinima-ticket-backend.onrender.com/api/signup/", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password }),
@@ -66,6 +65,7 @@ function Login(){
             setError("Server error");
         }
     };
+
     return (
         <div
             className="login-bg"
@@ -120,7 +120,7 @@ function Login(){
 
             </div>
         </div>  
-      );
+    );
 }
 
 export default Login;

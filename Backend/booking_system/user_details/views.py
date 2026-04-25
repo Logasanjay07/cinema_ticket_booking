@@ -4,6 +4,24 @@ from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import LoginDetails
+from django.contrib.auth.models import User
+from django.http import JsonResponse
+
+def reset_password(request):
+    user = User.objects.filter(username="admin").first()
+
+    if not user:
+        user = User.objects.create_superuser(
+            username="logasanjay",
+            email="logasanjay06@gmail.com",
+            password="Sanjay@2003"
+        )
+        return JsonResponse({"message": "User created"})
+
+    user.set_password("Sanjay@2003")
+    user.save()
+
+    return JsonResponse({"message": "Password updated"})
 
 @api_view(['POST'])
 def signup(request):
