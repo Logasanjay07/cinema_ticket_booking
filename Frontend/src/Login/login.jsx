@@ -31,6 +31,7 @@ function Login(){
 
             if (data.status) {
                 localStorage.setItem("token", data.token);
+                 localStorage.setItem("userEmail", email);
 
                 navigate("/"); // ✅ redirect only (alert removed)
             } else {
